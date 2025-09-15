@@ -1,13 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Flask App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Groundwater Index Portal</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Hello from Flask!</h1>
-    <form action="/greet" method="POST">
-        <input type="text" name="name" placeholder="Enter your name">
-        <button type="submit">Greet</button>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Indian_government_emblem.png" alt="Govt Emblem">
+      <h1>Groundwater Index Portal</h1>
+    </div>
+    <nav>
+      <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="#"><i class="fas fa-flask"></i> Calculator</a>
+      <a href="#"><i class="fas fa-file-alt"></i> Reports</a>
+      <a href="#"><i class="fas fa-map-marked-alt"></i> Maps</a>
+      <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+    </nav>
+    <div class="user-login">
+      <i class="fas fa-user-circle"></i> Login
+    </div>
+  </header>
+
+  <!-- HERO / CALCULATOR -->
+  <section class="hero">
+    <h2>Groundwater Pollution Index Portal</h2>
+    <p>Monitor and analyze groundwater contamination using India's official HMPI calculator.</p>
+    <form action="/calculate" method="post">
+      <input type="text" name="score" placeholder="Enter HMPI input">
+      <button type="submit" class="cta-btn"><i class="fas fa-microscope"></i> Calculate</button>
     </form>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    {% if result %}
+      <div class="result-section">
+        <h2>Result</h2>
+        <p>HMPI = {{ result }}</p>
+      </div>
+    {% endif %}
+
+    {% if error %}
+      <div class="error-section">
+        <p style="color:red;">{{ error }}</p>
+      </div>
+    {% endif %}
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Government of India | Ministry of Environment, Forest & Climate Change.
+  </footer>
 </body>
 </html>

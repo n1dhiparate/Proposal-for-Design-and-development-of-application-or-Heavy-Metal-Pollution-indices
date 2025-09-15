@@ -1,0 +1,191 @@
+body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #f4f7f9;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: #002d72;
+      color: #fff;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo img {
+      width: 55px;
+      height: 55px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    header h1 {
+      font-size: 26px;
+      margin: 0;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      padding: 8px 10px;
+      transition: color 0.2s, background 0.2s;
+      border-radius: 5px;
+    }
+    nav a:hover,
+    nav .active {
+      background: #ffc107;
+      color: #002d72;
+    }
+    .user-login {
+      font-size: 18px;
+      color: #fff;
+      margin-left: 30px;
+      opacity: 0.8;
+    }
+    .hero {
+      background: linear-gradient(90deg, #002d72 60%, #ffc107 120%);
+      color: #fff;
+      padding: 48px 0 48px 0;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+    .hero h2 {
+      margin-bottom: 8px;
+      font-size: 34px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 22px;
+      opacity: 0.95;
+    }
+    .hero .cta-btn {
+      background: #ffc107;
+      color: #002d72;
+      border: none;
+      border-radius: 7px;
+      font-size: 19px;
+      padding: 12px 32px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .hero .cta-btn:hover {
+      background: #ffdb5c;
+    }
+    main {
+      max-width: 1200px;
+      margin: 50px auto 35px auto;
+      padding: 0 28px;
+    }
+    .section-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px,1fr));
+      gap: 32px;
+      margin-bottom: 35px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 11px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 230px;
+      position: relative;
+      transition: box-shadow 0.15s;
+    }
+    .card h3 {
+      margin: 0 0 4px 0;
+      font-size: 21px;
+      font-weight: 700;
+      color: #002d72;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card .card-icon {
+      font-size: 27px;
+      margin-right: 5px;
+      color: #ffc107;
+    }
+    .card p {
+      margin: 0;
+      color: #333;
+      font-size: 16px;
+    }
+    .card .section-btn {
+      align-self: flex-start;
+      background: #002d72;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      font-size: 16px;
+      border-radius: 7px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.16s;
+      font-weight: 500;
+    }
+    .card .section-btn:hover {
+      background: #0049ba;
+    }
+    .card.coming-soon {
+      background: repeating-linear-gradient(-45deg, #fff, #fff 18px, #f4f7f9 18px, #f4f7f9 36px);
+      opacity: 0.8;
+    }
+    .card.coming-soon .card-icon {
+      color: #bcbcbc;
+    }
+    .card.coming-soon h3 {
+      color: #888;
+    }
+    .card.coming-soon p {
+      color: #747474;
+      font-style: italic;
+    }
+    footer {
+      background: #002d72;
+      color: #fff;
+      text-align: center;
+      padding: 28px 0 15px 0;
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin-top: 40px;
+      border-top: 6px solid #ffc107;
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px;
+      }
+      .hero {
+        padding: 34px 8px;
+      }
+      main {
+        padding: 0 10px;
+      }
+      .section-cards {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+    }
